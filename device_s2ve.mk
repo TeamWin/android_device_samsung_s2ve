@@ -132,6 +132,10 @@ include frameworks/native/build/phone-hdpi-512-dalvik-heap.mk
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
+# recovery
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/ramdisk/twrp.fstab:recovery/root/etc/twrp.fstab
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 $(call inherit-product, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
